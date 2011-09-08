@@ -33,11 +33,10 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 set visualbell
-set cursorline
 set ttyfast
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set laststatus=2
-set relativenumber
+"set relativenumber
 set number
             
 " Remap leader key
