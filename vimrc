@@ -38,6 +38,7 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 set laststatus=2
 "set relativenumber
 set number
+syntax enable
             
 " Remap leader key
 let mapleader = ","
@@ -64,18 +65,17 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-
-" Stuff i'm toying with at the moment
-" ===========================================
-" hit jj to escape instead of moving your hand
-inoremap jj <ESC> 
-
 " Split window stuff
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Stuff i'm toying with at the moment
+" ===========================================
+" hit jj to escape instead of moving your hand
+inoremap jj <ESC> 
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -145,9 +145,16 @@ Bundle 'gmarik/vundle'
 
 " Programming
 Bundle 'rails.vim'
+Bundle 'cucumber.zip'
+Bundle 'haml.zip'
 
 " Git Integration
 Bundle 'git.zip'
 Bundle 'fugitive.vim'
 
+" Syntax Highlighting
+Bundle 'Markdown'
+Bundle 'liquid.vim'
 
+" Comments
+Bundle 'commentary.vim'
