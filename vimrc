@@ -155,6 +155,10 @@ Bundle 'fugitive.vim'
 " Syntax Highlighting
 Bundle 'Markdown'
 Bundle 'liquid.vim'
+Bundle 'css_color.vim'
+
+" Text Editing Features
+Bundle 'surround.vim'
 
 " Comments
 Bundle 'commentary.vim'
