@@ -101,13 +101,16 @@ fi
 
 export PATH=$PATH:/sbin
 
+# if macVim exists, replace vim commands with appropriate macVim counterparts
+MVIMCMDS="vim vimdiff vimex"
+for cmd in $MVIMCMDS
+do
+    command -v m$cmd >/dev/null && { echo "m$cmd"; alias $cmd="m$cmd"; }
+done
 
 #development aliases
 alias be='bundle exec'
 alias bspec='bundle exec rspec spec -c -f d'
 alias cucwip='rake cucumber:wip'
 
-#ssh aliases
-alias amazonws='ssh ec2-67-202-26-50.compute-1.amazonaws.com'
-alias nnarmain='ssh -i .ssh/nnar_id_rsa ec2-50-16-190-123.compute-1.amazonaws.com'
-alias seva='wtt@seva.georgetown.edu'
+RACK_ENV=development
