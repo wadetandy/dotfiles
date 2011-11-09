@@ -26,19 +26,19 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set encoding=utf-8
-set scrolloff=3
+set scrolloff=5
 set autoindent
 set showmode
 set hidden
 set wildmenu
 set wildmode=list:longest
 set visualbell
-set cursorline
 set ttyfast
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set laststatus=2
 set relativenumber
 set number
+syntax enable
             
 " Remap leader key
 let mapleader = ","
@@ -146,9 +146,9 @@ Bundle 'gmarik/vundle'
 
 " Programming
 Bundle 'rails.vim'
+Bundle 'RubySinatra'
+Bundle 'vimRubyX'
 
 " Git Integration
 Bundle 'git.zip'
 Bundle 'fugitive.vim'
-
-
