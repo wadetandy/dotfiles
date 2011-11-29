@@ -17,10 +17,30 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" Wildmenu completion
+set wildmenu
+set wildmode=list:longest
 
-set backspace=indent,eol,start
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.DS_Store                       " OSX stuffs
+
+" Backup and Swap
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set backup
+
+" Color Scheme
+syntax enable
+set background=dark
 
 " Random settings
+set backspace=indent,eol,start
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -38,14 +58,19 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 set laststatus=2
 "set relativenumber
 set number
-syntax enable
             
 " Remap leader key
 let mapleader = ","
 
-" Text search commands
+" hit jj to escape instead of moving your hand
+inoremap jj <ESC> 
+
+" Searching and Movement ====================================================
+
+" Sane Regex
 nnoremap / /\v
 vnoremap / /\v
+
 set ignorecase
 set smartcase
 set gdefault
@@ -66,16 +91,13 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Split window stuff
-nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <leader>w <C-w>v<C-w>l
 
-" Stuff i'm toying with at the moment
-" ===========================================
-" hit jj to escape instead of moving your hand
-inoremap jj <ESC> 
+" Stuff i'm toying with at the moment ========================================
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -141,6 +163,125 @@ endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Language and Filetype Specific Stuff ==========================================
+" Stolen from https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
+" C {{{
+
+augroup ft_c
+    au!
+    au FileType c 
+augroup END
+
+" }}}
+" HTML and HTMLDjango {{{
+
+augroup ft_html
+    au!
+
+    au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+    au FileType html,jinja,htmldjango setlocal foldmethod=manual
+
+    " Use <localleader>f to fold the current tag.
+    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
+
+    " Use Shift-Return to turn this:
+    "     <tag>|</tag>
+    "
+    " into this:
+    "     <tag>
+    "         |
+    "     </tag>
+    au FileType html,jinja,htmldjango nnoremap <buffer> <s-cr> vit<esc>a<cr><esc>vito<esc>i<cr><esc>
+
+    " Smarter pasting
+    au FileType html,jinja,htmldjango nnoremap <buffer> p :<C-U>YRPaste 'p'<CR>v`]=`]
+    au FileType html,jinja,htmldjango nnoremap <buffer> P :<C-U>YRPaste 'P'<CR>v`]=`]
+    au FileType html,jinja,htmldjango nnoremap <buffer> π :<C-U>YRPaste 'p'<CR>
+    au FileType html,jinja,htmldjango nnoremap <buffer> ∏ :<C-U>YRPaste 'P'<CR>
+
+    " Django tags
+    au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
+
+    " Django variables
+    au FileType jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><left><left>
+augroup END
+
+" }}}
+" Javascript {{{
+
+augroup ft_javascript
+    au!
+
+    au FileType javascript setlocal foldmethod=marker
+    au FileType javascript setlocal foldmarker={,}
+augroup END
+
+" }}}
+" Markdown {{{
+
+augroup ft_markdown
+    au!
+
+    au BufNewFile,BufRead *.m*down setlocal filetype=markdown
+
+    " Use <localleader>1/2/3 to add headings.
+    au Filetype markdown nnoremap <buffer> <localleader>1 yypVr=
+    au Filetype markdown nnoremap <buffer> <localleader>2 yypVr-
+    au Filetype markdown nnoremap <buffer> <localleader>3 I### <ESC>
+augroup END
+
+" }}}
+" Nginx {{{
+
+augroup ft_nginx
+    au!
+
+    au BufRead,BufNewFile /etc/nginx/conf/*                      set ft=nginx
+    au BufRead,BufNewFile /etc/nginx/sites-available/*           set ft=nginx
+    au BufRead,BufNewFile /usr/local/etc/nginx/sites-available/* set ft=nginx
+    au BufRead,BufNewFile vhost.nginx                            set ft=nginx
+
+    au FileType nginx setlocal foldmethod=marker foldmarker={,}
+augroup END
+
+" }}}
+" Python {{{
+
+augroup ft_python
+    au!
+
+    " au FileType python setlocal omnifunc=pythoncomplete#Complete
+    au FileType python setlocal define=^\s*\\(def\\\\|class\\)
+    au FileType python compiler nose
+    au FileType man nnoremap <buffer> <cr> :q<cr>
+    
+    " Jesus tapdancing Christ, built-in Python syntax, you couldn't let me
+    " override this in a normal way, could you?
+    au FileType python if exists("python_space_error_highlight") | unlet python_space_error_highlight | endif
+augroup END
+
+" }}}
+" Ruby {{{
+
+augroup ft_ruby
+    au!
+    au Filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup END
+
+" }}}
+" Vim {{{
+
+augroup ft_vim
+    au!
+
+    au FileType vim setlocal foldmethod=marker
+    au FileType help setlocal textwidth=78
+    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+augroup END
+
+" }}}
+
+" Vundle Declarations =========================================================
 Bundle 'gmarik/vundle'
 
 " Programming
@@ -164,3 +305,4 @@ Bundle 'surround.vim'
 
 " Comments
 Bundle 'commentary.vim'
+
