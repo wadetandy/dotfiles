@@ -105,7 +105,7 @@ export PATH=$PATH:/sbin
 MVIMCMDS="vim vimdiff vimex"
 for cmd in $MVIMCMDS
 do
-    command -v m$cmd >/dev/null && { echo "m$cmd"; alias $cmd="m$cmd"; }
+    command -v m$cmd >/dev/null && { alias $cmd="m$cmd"; }
 done
 
 #development aliases
