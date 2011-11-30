@@ -167,10 +167,10 @@ call vundle#rc()
 " Stolen from https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
 " C {{{
 
-augroup ft_c
-    au!
-    au FileType c 
-augroup END
+"augroup ft_c
+"    au!
+"    au FileType c 
+"augroup END
 
 " }}}
 " HTML and HTMLDjango {{{
@@ -250,9 +250,9 @@ augroup END
 augroup ft_python
     au!
 
-    " au FileType python setlocal omnifunc=pythoncomplete#Complete
+    au FileType python setlocal omnifunc=pythoncomplete#Complete
     au FileType python setlocal define=^\s*\\(def\\\\|class\\)
-    au FileType python compiler nose
+    "au FileType python compiler nose
     au FileType man nnoremap <buffer> <cr> :q<cr>
     
     " Jesus tapdancing Christ, built-in Python syntax, you couldn't let me
@@ -274,7 +274,7 @@ augroup END
 augroup ft_vim
     au!
 
-    au FileType vim setlocal foldmethod=marker
+    au FileType vim setlocal foldmethod=marker shiftwidth=2 tabstop=2
     au FileType help setlocal textwidth=78
     au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 augroup END
