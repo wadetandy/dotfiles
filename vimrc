@@ -96,6 +96,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>e <C-w>s<C-w>j
 
 " Stuff i'm toying with at the moment ========================================
 
