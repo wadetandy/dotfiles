@@ -288,7 +288,6 @@ Bundle 'gmarik/vundle'
 " Programming
 Bundle 'rails.vim'
 Bundle 'RubySinatra'
-Bundle 'vimRubyX'
 Bundle 'cucumber.zip'
 Bundle 'haml.zip'
 
