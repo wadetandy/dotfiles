@@ -1,0 +1,4 @@
+# This input file customizes the readline(3) keybinding functions
+
+# Bind double j to escape
+"jj": "\e"
