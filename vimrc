@@ -13,9 +13,11 @@ set softtabstop=4
 set expandtab
 
 " Wrapping
+"set nowrap
 set textwidth=79
 set colorcolumn=79
 set formatoptions=qrn1
+set sidescroll=5
 
 " Wildmenu completion
 set wildmenu
@@ -85,6 +87,9 @@ vnoremap <tab> %
 nnoremap j gj
 nnoremap k gk
 
+" Shouldn't need to shift for colon
+nnoremap ; :
+
 " Remap F1 to escape to stop hitting help by accident
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -97,6 +102,15 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>e <C-w>s<C-w>j
+
+" Plugin configuration =======================================================
+
+" NERD Tree
+map <leader>t :NERDTreeToggle<cr>
+let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
+"let NERDTreeWinPos="right"
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
+
 
 " Stuff i'm toying with at the moment ========================================
 
@@ -294,6 +308,10 @@ Bundle 'haml.zip'
 " Git Integration
 Bundle 'git.zip'
 Bundle 'fugitive.vim'
+
+" IDE Features
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 
 " Syntax Highlighting
 Bundle 'Markdown'
