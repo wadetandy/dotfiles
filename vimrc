@@ -51,7 +51,7 @@ set encoding=utf-8
 set scrolloff=5
 set autoindent
 set showmode
-set hidden
+set hidden      " buffers with edits can exist without being 'open'
 set wildmenu
 set wildmode=list:longest
 set visualbell
@@ -107,11 +107,18 @@ nnoremap <leader>e <C-w>s<C-w>j
 
 " NERD Tree
 map <leader>t :NERDTreeToggle<cr>
+let NERDTreeMapOpenVSplit='w'
+let NERDTreeMapOpenSplit='e'
+let NERDTreeMapOpenExpl='s'
+let NERDTreeHijackNetrw='0'
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 "let NERDTreeWinPos="right"
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
+autocmd vimenter * if !argc() | NERDTree | endif " open NERD tree automatically if no files are specified
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+            " ^^ if NERD Tree is the only open buffer, close vim
 
-
+            
 " Stuff i'm toying with at the moment ========================================
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
