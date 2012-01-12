@@ -183,10 +183,6 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" Set runtimepath to work with vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 " Language and Filetype Specific Stuff ==========================================
 " Stolen from https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
 " C {{{
@@ -305,31 +301,38 @@ augroup END
 
 " }}}
 
-" Vundle Declarations =========================================================
-Bundle 'gmarik/vundle'
+"" Vundle Declarations =========================================================
+" We are switching to pathogen for now, but let's keep these for a bit just in
+" case
 
-" Programming
-Bundle 'rails.vim'
-Bundle 'RubySinatra'
-Bundle 'cucumber.zip'
-Bundle 'haml.zip'
+" Set runtimepath to work with vundle
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
 
-" Git Integration
-Bundle 'git.zip'
-Bundle 'fugitive.vim'
+"Bundle 'gmarik/vundle'
 
-" IDE Features
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
+"" Programming
+"Bundle 'rails.vim'
+"Bundle 'RubySinatra'
+"Bundle 'cucumber.zip'
+"Bundle 'haml.zip'
 
-" Syntax Highlighting
-Bundle 'Markdown'
-Bundle 'liquid.vim'
-Bundle 'css_color.vim'
+"" Git Integration
+"Bundle 'git.zip'
+"Bundle 'fugitive.vim'
 
-" Text Editing Features
-Bundle 'surround.vim'
+"" IDE Features
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdcommenter'
 
-" Comments
-Bundle 'commentary.vim'
+"" Syntax Highlighting
+"Bundle 'Markdown'
+"Bundle 'liquid.vim'
+"Bundle 'css_color.vim'
+
+"" Text Editing Features
+"Bundle 'surround.vim'
+
+"" Comments
+"Bundle 'commentary.vim'
 
