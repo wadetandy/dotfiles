@@ -1,3 +1,4 @@
+" Load our Pathogen bundles
 call pathogen#infect()
 
 " Use Vim settings, rather than Vi settings (much better!).
@@ -16,34 +17,34 @@ set expandtab
 
 " Wrapping
 "set nowrap
-set textwidth=79
-set colorcolumn=79
+set textwidth=72
+set colorcolumn=80
 set formatoptions=qrn1
 set sidescroll=5
 
-" Wildmenu completion
+" wildmenu completion
 set wildmenu
 set wildmode=list:longest
 
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=.hg,.git,.svn                    " version control
+set wildignore+=*.aux,*.out,*.toc                " latex intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.spl                            " compiled spelling word lists
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store                       " OSX stuffs
+set wildignore+=*.sw?                            " vim swap files
+set wildignore+=*.ds_store                       " osx stuffs
 
-" Backup and Swap
+" backup and swap
 set undodir=~/.vim/tmp/undo//
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 set backup
 
-" Color Scheme
+" color scheme
 syntax enable
 set background=dark
 
-" Random settings
+" random settings
 set backspace=indent,eol,start
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
@@ -63,15 +64,15 @@ set laststatus=2
 "set relativenumber
 set number
             
-" Remap leader key
+" remap leader key
 let mapleader = ","
 
 " hit jj to escape instead of moving your hand
-inoremap jj <ESC> 
+inoremap jj <esc> 
 
-" Searching and Movement ====================================================
+" searching and movement ====================================================
 
-" Sane Regex
+" sane regex
 nnoremap / /\v
 vnoremap / /\v
 
@@ -85,254 +86,276 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Move by screen line instead of file line
+" move by screen line instead of file line
 nnoremap j gj
 nnoremap k gk
 
-" Shouldn't need to shift for colon
+" shouldn't need to shift for colon
 nnoremap ; :
 
-" Remap F1 to escape to stop hitting help by accident
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+" remap f1 to escape to stop hitting help by accident
+inoremap <f1> <esc>
+nnoremap <f1> <esc>
+vnoremap <f1> <esc>
 
-" Split window stuff
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <leader>e <C-w>s<C-w>j
+" split window stuff
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <leader>w <c-w>v<c-w>l
+nnoremap <leader>e <c-w>s<c-w>j
 
-" Plugin configuration =======================================================
+" plugin configuration =======================================================
 
-" NERD Tree
-map <leader>t :NERDTreeToggle<cr>
-let NERDTreeMapOpenVSplit='w'
-let NERDTreeMapOpenSplit='e'
-let NERDTreeMapOpenExpl='s'
-let NERDTreeHijackNetrw='0'
-let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
-"let NERDTreeWinPos="right"
-let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
-autocmd vimenter * if !argc() | NERDTree | endif " open NERD tree automatically if no files are specified
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-            " ^^ if NERD Tree is the only open buffer, close vim
+" nerd tree
+map <leader>t :nerdtreetoggle<cr>
+let nerdtreemapopenvsplit='w'
+let nerdtreemapopensplit='e'
+let nerdtreemapopenexpl='s'
+let nerdtreehijacknetrw='0'
+let nerdtreeignore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
+"let nerdtreewinpos="right"
+let nerdtreesortorder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
+autocmd vimenter * if !argc() | nerdtree | endif " open nerd tree automatically if no files are specified
+autocmd bufenter * if (winnr("$") == 1 && exists("b:nerdtreetype") && b:nerdtreetype == "primary") | q | endif
+            " ^^ if nerd tree is the only open buffer, close vim
 
+" Rails.vim
+map <Leader>rm :Rmodel 
+map <Leader>rc :Rcontroller 
+map <Leader>rv :Rview 
+map <Leader>ru :Runittest 
+map <Leader>rf :Rfunctionaltest 
+map <Leader>rtm :RTmodel 
+map <Leader>rtc :RTcontroller 
+map <Leader>rtv :RTview 
+map <Leader>rtu :RTunittest 
+map <Leader>rtf :RTfunctionaltest 
+map <Leader>rwm :RVmodel 
+map <Leader>rwc :RVcontroller 
+map <Leader>rwv :RVview 
+map <Leader>rwu :RVunittest 
+map <Leader>rwf :RVfunctionaltest 
+map <Leader>rem :RSmodel 
+map <Leader>rec :RScontroller 
+map <Leader>rev :RSview 
+map <Leader>reu :RSunittest 
+map <Leader>ref :RSfunctionaltest 
             
-" Stuff i'm toying with at the moment ========================================
+" stuff i'm toying with at the moment ========================================
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" for win32 gui: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
+" don't use ex mode, use q for formatting
+map q gq
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+" ctrl-u in insert mode deletes a lot.  use ctrl-g u to first break undo,
+" so that you can undo ctrl-u after inserting a line break.
+inoremap <c-u> <c-g>u<c-u>
 
-" In many terminal emulators the mouse works just fine, thus enable it.
+" in many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
+" switch syntax highlighting on, when the terminal has colors
+" also switch on highlighting the last used search pattern.
+" Turning this off for now since I don't think I need it
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
 
-" Only do this part when compiled with support for autocommands.
+" only do this part when compiled with support for autocommands.
 if has("autocmd")
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
+  " enable file type detection.
+  " use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in c files, etc.
+  " also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
+  " put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcex
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  " for all text files set 'textwidth' to 78 characters.
+  autocmd filetype text setlocal textwidth=78
 
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
+  " when editing a file, always jump to the last known cursor position.
+  " don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
+  " also don't do it when the mark is in the first line, that is the default
   " position when opening a file.
-  autocmd BufReadPost *
+  autocmd bufreadpost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
 
-  augroup END
+  augroup end
 
 endif " has("autocmd")
 
-" Convenient command to see the difference between the current buffer and the
+" convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+" only define it when not defined already.
+if !exists(":Difforig")
+  command Difforig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
 
-" Language and Filetype Specific Stuff ==========================================
-" Stolen from https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
-" C {{{
+" language and filetype specific stuff ==========================================
+" stolen from https://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
+" c {{{
 
 "augroup ft_c
 "    au!
-"    au FileType c 
-"augroup END
+"    au filetype c 
+"augroup end
 
 " }}}
-" HTML and HTMLDjango {{{
+" html and htmldjango {{{
 
 augroup ft_html
     au!
 
-    au BufNewFile,BufRead *.html setlocal filetype=htmldjango
-    au FileType html,jinja,htmldjango setlocal foldmethod=manual
+    au bufnewfile,bufread *.html setlocal filetype=htmldjango
+    au filetype html,jinja,htmldjango setlocal foldmethod=manual
 
-    " Use <localleader>f to fold the current tag.
-    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
+    " use <localleader>f to fold the current tag.
+    au filetype html,jinja,htmldjango nnoremap <buffer> <localleader>f vatzf
 
-    " Use Shift-Return to turn this:
+    " use shift-return to turn this:
     "     <tag>|</tag>
     "
     " into this:
     "     <tag>
     "         |
     "     </tag>
-    au FileType html,jinja,htmldjango nnoremap <buffer> <s-cr> vit<esc>a<cr><esc>vito<esc>i<cr><esc>
+    au filetype html,jinja,htmldjango nnoremap <buffer> <s-cr> vit<esc>a<cr><esc>vito<esc>i<cr><esc>
 
-    " Smarter pasting
-    au FileType html,jinja,htmldjango nnoremap <buffer> p :<C-U>YRPaste 'p'<CR>v`]=`]
-    au FileType html,jinja,htmldjango nnoremap <buffer> P :<C-U>YRPaste 'P'<CR>v`]=`]
-    au FileType html,jinja,htmldjango nnoremap <buffer> π :<C-U>YRPaste 'p'<CR>
-    au FileType html,jinja,htmldjango nnoremap <buffer> ∏ :<C-U>YRPaste 'P'<CR>
+    " smarter pasting
+    au filetype html,jinja,htmldjango nnoremap <buffer> p :<c-u>yrpaste 'p'<cr>v`]=`]
+    au filetype html,jinja,htmldjango nnoremap <buffer> p :<c-u>yrpaste 'p'<cr>v`]=`]
+    au filetype html,jinja,htmldjango nnoremap <buffer> π :<c-u>yrpaste 'p'<cr>
+    au filetype html,jinja,htmldjango nnoremap <buffer> ∏ :<c-u>yrpaste 'p'<cr>
 
-    " Django tags
-    au FileType jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
+    " django tags
+    au filetype jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
 
-    " Django variables
-    au FileType jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><left><left>
-augroup END
+    " django variables
+    au filetype jinja,htmldjango inoremap <buffer> <c-f> {{<space><space>}}<left><left><left>
+augroup end
 
 " }}}
-" Javascript {{{
+" javascript {{{
 
 augroup ft_javascript
     au!
 
-    "au FileType javascript setlocal foldmethod=marker
-    au FileType javascript setlocal foldmarker={,}
-augroup END
+    "au filetype javascript setlocal foldmethod=marker
+    au filetype javascript setlocal foldmarker={,}
+augroup end
 
 " }}}
-" Markdown {{{
+" markdown {{{
 
 augroup ft_markdown
     au!
 
-    au BufNewFile,BufRead *.m*down setlocal filetype=markdown
+    au bufnewfile,bufread *.m*down setlocal filetype=markdown
 
-    " Use <localleader>1/2/3 to add headings.
-    au Filetype markdown nnoremap <buffer> <localleader>1 yypVr=
-    au Filetype markdown nnoremap <buffer> <localleader>2 yypVr-
-    au Filetype markdown nnoremap <buffer> <localleader>3 I### <ESC>
-augroup END
+    " use <localleader>1/2/3 to add headings.
+    au filetype markdown nnoremap <buffer> <localleader>1 yypvr=
+    au filetype markdown nnoremap <buffer> <localleader>2 yypvr-
+    au filetype markdown nnoremap <buffer> <localleader>3 i### <esc>
+augroup end
 
 " }}}
-" Nginx {{{
+" nginx {{{
 
 augroup ft_nginx
     au!
 
-    au BufRead,BufNewFile /etc/nginx/conf/*                      set ft=nginx
-    au BufRead,BufNewFile /etc/nginx/sites-available/*           set ft=nginx
-    au BufRead,BufNewFile /usr/local/etc/nginx/sites-available/* set ft=nginx
-    au BufRead,BufNewFile vhost.nginx                            set ft=nginx
+    au bufread,bufnewfile /etc/nginx/conf/*                      set ft=nginx
+    au bufread,bufnewfile /etc/nginx/sites-available/*           set ft=nginx
+    au bufread,bufnewfile /usr/local/etc/nginx/sites-available/* set ft=nginx
+    au bufread,bufnewfile vhost.nginx                            set ft=nginx
 
-    au FileType nginx setlocal foldmethod=marker foldmarker={,}
-augroup END
+    au filetype nginx setlocal foldmethod=marker foldmarker={,}
+augroup end
 
 " }}}
-" Python {{{
+" python {{{
 
 augroup ft_python
     au!
 
-    au FileType python setlocal omnifunc=pythoncomplete#Complete
-    au FileType python setlocal define=^\s*\\(def\\\\|class\\)
-    "au FileType python compiler nose
-    au FileType man nnoremap <buffer> <cr> :q<cr>
+    au filetype python setlocal omnifunc=pythoncomplete#complete
+    au filetype python setlocal define=^\s*\\(def\\\\|class\\)
+    "au filetype python compiler nose
+    au filetype man nnoremap <buffer> <cr> :q<cr>
     
-    " Jesus tapdancing Christ, built-in Python syntax, you couldn't let me
+    " jesus tapdancing christ, built-in python syntax, you couldn't let me
     " override this in a normal way, could you?
-    au FileType python if exists("python_space_error_highlight") | unlet python_space_error_highlight | endif
-augroup END
+    au filetype python if exists("python_space_error_highlight") | unlet python_space_error_highlight | endif
+augroup end
 
 " }}}
-" Ruby {{{
+" ruby {{{
 
 augroup ft_ruby
     au!
-    au Filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-augroup END
+    au filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+augroup end
 
 " }}}
-" Vim {{{
+" vim {{{
 
 augroup ft_vim
     au!
 
-    au FileType vim setlocal foldmethod=marker shiftwidth=2 tabstop=2
-    au FileType help setlocal textwidth=78
-    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
-augroup END
+    au filetype vim setlocal foldmethod=marker shiftwidth=2 tabstop=2
+    au filetype help setlocal textwidth=78
+    au bufwinenter *.txt if &ft == 'help' | wincmd l | endif
+augroup end
 
 " }}}
 
-"" Vundle Declarations =========================================================
-" We are switching to pathogen for now, but let's keep these for a bit just in
+"" vundle declarations =========================================================
+" we are switching to pathogen for now, but let's keep these for a bit just in
 " case
 
-" Set runtimepath to work with vundle
+" set runtimepath to work with vundle
 "set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
 
-"Bundle 'gmarik/vundle'
+"bundle 'gmarik/vundle'
 
-"" Programming
-"Bundle 'rails.vim'
-"Bundle 'RubySinatra'
-"Bundle 'cucumber.zip'
-"Bundle 'haml.zip'
+"" programming
+"bundle 'rails.vim'
+"bundle 'rubysinatra'
+"bundle 'cucumber.zip'
+"bundle 'haml.zip'
 
-"" Git Integration
-"Bundle 'git.zip'
-"Bundle 'fugitive.vim'
+"" git integration
+"bundle 'git.zip'
+"bundle 'fugitive.vim'
 
-"" IDE Features
-"Bundle 'scrooloose/nerdtree'
-"Bundle 'scrooloose/nerdcommenter'
+"" ide features
+"bundle 'scrooloose/nerdtree'
+"bundle 'scrooloose/nerdcommenter'
 
-"" Syntax Highlighting
-"Bundle 'Markdown'
-"Bundle 'liquid.vim'
-"Bundle 'css_color.vim'
+"" syntax highlighting
+"bundle 'markdown'
+"bundle 'liquid.vim'
+"bundle 'css_color.vim'
 
-"" Text Editing Features
-"Bundle 'surround.vim'
+"" text editing features
+"bundle 'surround.vim'
 
-"" Comments
-"Bundle 'commentary.vim'
+"" comments
+"bundle 'commentary.vim'
 
