@@ -108,18 +108,18 @@ nnoremap <leader>e <c-w>s<c-w>j
 
 " plugin configuration =======================================================
 
-" nerd tree
-map <leader>t :nerdtreetoggle<cr>
-let nerdtreemapopenvsplit='w'
-let nerdtreemapopensplit='e'
-let nerdtreemapopenexpl='s'
-let nerdtreehijacknetrw='0'
-let nerdtreeignore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
-"let nerdtreewinpos="right"
-let nerdtreesortorder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
-autocmd vimenter * if !argc() | nerdtree | endif " open nerd tree automatically if no files are specified
-autocmd bufenter * if (winnr("$") == 1 && exists("b:nerdtreetype") && b:nerdtreetype == "primary") | q | endif
-            " ^^ if nerd tree is the only open buffer, close vim
+" NERD Tree
+map <leader>t :NERDTreeToggle<cr>
+let NERDTreeMapOpenVSplit='w'
+let NERDTreeMapOpenSplit='e'
+let NERDTreeMapOpenExpl='s'
+let NERDTreeHijackNetrw='0'
+let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
+"let NERDTreeWinPos="right"
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
+autocmd vimenter * if !argc() | NERDTree | endif " open NERD tree automatically if no files are specified
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+            " ^^ if NERD Tree is the only open buffer, close vim
 
 " Rails.vim
 map <Leader>rm :Rmodel 
