@@ -127,21 +127,25 @@ map <Leader>rc :Rcontroller
 map <Leader>rv :Rview 
 map <Leader>ru :Runittest 
 map <Leader>rf :Rfunctionaltest 
+map <Leader>rv :Rmigration
 map <Leader>rtm :RTmodel 
 map <Leader>rtc :RTcontroller 
 map <Leader>rtv :RTview 
 map <Leader>rtu :RTunittest 
 map <Leader>rtf :RTfunctionaltest 
+map <Leader>rtv :RTmigration
 map <Leader>rwm :RVmodel 
 map <Leader>rwc :RVcontroller 
 map <Leader>rwv :RVview 
 map <Leader>rwu :RVunittest 
 map <Leader>rwf :RVfunctionaltest 
+map <Leader>rwv :RVmigration
 map <Leader>rem :RSmodel 
 map <Leader>rec :RScontroller 
 map <Leader>rev :RSview 
 map <Leader>reu :RSunittest 
 map <Leader>ref :RSfunctionaltest 
+map <Leader>rev :RSmigration
             
 " stuff i'm toying with at the moment ========================================
 
