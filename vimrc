@@ -1,5 +1,7 @@
 " Load our Pathogen bundles
 call pathogen#infect()
+" And Tags
+call pathogen#helptags()
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -120,6 +122,10 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
 autocmd vimenter * if !argc() | NERDTree | endif " open NERD tree automatically if no files are specified
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
             " ^^ if NERD Tree is the only open buffer, close vim
+            
+" Command-T
+map <D-t> :CommandT
+
 
 " Rails.vim
 map <Leader>rm :Rmodel 
