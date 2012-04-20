@@ -111,7 +111,6 @@ nnoremap <leader>e <c-w>s<c-w>j
 " plugin configuration =======================================================
 
 " NERD Tree
-map <leader>t :NERDTreeToggle<cr>
 let NERDTreeMapOpenVSplit='w'
 let NERDTreeMapOpenSplit='e'
 let NERDTreeMapOpenExpl='s'
@@ -119,7 +118,7 @@ let NERDTreeHijackNetrw='0'
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 "let NERDTreeWinPos="right"
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
-autocmd vimenter * if !argc() | NERDTree | endif " open NERD tree automatically if no files are specified
+"autocmd vimenter * if !argc() | NERDTree | endif " open NERD tree automatically if no files are specified
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
             " ^^ if NERD Tree is the only open buffer, close vim
             
