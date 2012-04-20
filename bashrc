@@ -87,6 +87,10 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lal='ls -Al'
 
+# git aliases
+alias st="git status"
+alias pr="git pull --rebase"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
