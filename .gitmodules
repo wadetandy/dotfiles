@@ -49,3 +49,12 @@
 [submodule ".vim/bundle/color-irblack"]
 	path = .vim/bundle/color-irblack
 	url = https://github.com/wgibbs/vim-irblack.git
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

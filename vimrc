@@ -19,10 +19,10 @@ set expandtab
 
 " Wrapping
 "set nowrap
-set textwidth=72
-set colorcolumn=80
-set formatoptions=qrn1
-set sidescroll=5
+"set textwidth=72
+"set colorcolumn=80
+"set formatoptions=qrn1
+"set sidescroll=5
 
 " wildmenu completion
 set wildmenu
@@ -44,7 +44,14 @@ set backup
 
 " color scheme
 syntax enable
+colorscheme wombat
 set background=dark
+
+if has("gui_running")
+  if has("gui_macvim")
+    set guifont=Monaco:h13
+  endif
+endif
 
 " random settings
 set backspace=indent,eol,start
@@ -65,12 +72,12 @@ set backspace=indent,eol,start  " allow backspacing over everything in insert mo
 set laststatus=2
 "set relativenumber
 set number
-            
+
 " remap leader key
 let mapleader = ","
 
 " hit jj to escape instead of moving your hand
-inoremap jj <esc> 
+inoremap jj <esc>
 
 " searching and movement ====================================================
 
@@ -110,7 +117,11 @@ nnoremap <leader>e <c-w>s<c-w>j
 
 " plugin configuration =======================================================
 
-" NERD Tree
+" NERDCommenter
+nmap <D-/> <plug>NERDCommenterToggle
+vmap <D-/> <plug>NERDCommenterToggle
+
+" NERDTree
 let NERDTreeMapOpenVSplit='w'
 let NERDTreeMapOpenSplit='e'
 let NERDTreeMapOpenExpl='s'
@@ -121,10 +132,6 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.bak$', '\~$']
 "autocmd vimenter * if !argc() | NERDTree | endif " open NERD tree automatically if no files are specified
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
             " ^^ if NERD Tree is the only open buffer, close vim
-            
-" Command-T
-map <D-t> :CommandT
-
 
 " Rails.vim
 map <Leader>rm :Rmodel 
@@ -151,7 +158,7 @@ map <Leader>rev :RSview
 map <Leader>reu :RSunittest 
 map <Leader>ref :RSfunctionaltest 
 map <Leader>rev :RSmigration
-            
+
 " stuff i'm toying with at the moment ========================================
 
 " for win32 gui: remove 't' flag from 'guioptions': no tearoff menu entries
@@ -189,9 +196,6 @@ if has("autocmd")
   " put these in an autocmd group, so that we can delete them easily.
   augroup vimrcex
   au!
-
-  " for all text files set 'textwidth' to 78 characters.
-  autocmd filetype text setlocal textwidth=78
 
   " when editing a file, always jump to the last known cursor position.
   " don't do it when the position is invalid or when inside an event handler
@@ -332,39 +336,4 @@ augroup ft_vim
 augroup end
 
 " }}}
-
-"" vundle declarations =========================================================
-" we are switching to pathogen for now, but let's keep these for a bit just in
-" case
-
-" set runtimepath to work with vundle
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-
-"bundle 'gmarik/vundle'
-
-"" programming
-"bundle 'rails.vim'
-"bundle 'rubysinatra'
-"bundle 'cucumber.zip'
-"bundle 'haml.zip'
-
-"" git integration
-"bundle 'git.zip'
-"bundle 'fugitive.vim'
-
-"" ide features
-"bundle 'scrooloose/nerdtree'
-"bundle 'scrooloose/nerdcommenter'
-
-"" syntax highlighting
-"bundle 'markdown'
-"bundle 'liquid.vim'
-"bundle 'css_color.vim'
-
-"" text editing features
-"bundle 'surround.vim'
-
-"" comments
-"bundle 'commentary.vim'
 
