@@ -36,6 +36,10 @@ esac
 # Change shell mode to vi mode
 set -o vi
 
+if [ -f `brew --prefix`/etc/bash-completion ]; then
+ . `brew --prefix`/etc/bash-completion.d
+fi
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -72,8 +76,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -90,6 +92,11 @@ alias lal='ls -Al'
 # git aliases
 alias st="git status"
 alias pr="git pull --rebase"
+
+#development aliases
+alias be='bundle exec'
+alias bspec='bundle exec rspec spec -c -f d'
+alias cucwip='rake cucumber:wip'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -110,15 +117,13 @@ fi
 export PATH=$PATH:/sbin
 
 # if macVim exists, replace vim commands with appropriate macVim counterparts
-MVIMCMDS="vim vimdiff vimex"
-for cmd in $MVIMCMDS
-do
-    command -v m$cmd >/dev/null && { alias $cmd="m$cmd"; }
-done
-
-#development aliases
-alias be='bundle exec'
-alias bspec='bundle exec rspec spec -c -f d'
-alias cucwip='rake cucumber:wip'
+#MVIMCMDS="vim vimdiff vimex"
+#for cmd in $MVIMCMDS
+#do
+    #command -v m$cmd >/dev/null && { alias $cmd="m$cmd"; }
+#done
+export EDITOR=vim
 
 RACK_ENV=development
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
