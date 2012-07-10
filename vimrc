@@ -51,6 +51,8 @@ if has("gui_running")
   if has("gui_macvim")
     set guifont=Monaco:h13
   endif
+
+  set guioptions=egmrt
 endif
 
 " random settings
@@ -250,10 +252,10 @@ augroup ft_html
     au filetype html,jinja,htmldjango nnoremap <buffer> <s-cr> vit<esc>a<cr><esc>vito<esc>i<cr><esc>
 
     " smarter pasting
-    au filetype html,jinja,htmldjango nnoremap <buffer> p :<c-u>yrpaste 'p'<cr>v`]=`]
-    au filetype html,jinja,htmldjango nnoremap <buffer> p :<c-u>yrpaste 'p'<cr>v`]=`]
-    au filetype html,jinja,htmldjango nnoremap <buffer> π :<c-u>yrpaste 'p'<cr>
-    au filetype html,jinja,htmldjango nnoremap <buffer> ∏ :<c-u>yrpaste 'p'<cr>
+    "au filetype html,jinja,htmldjango nnoremap <buffer> p :<c-u>yrpaste 'p'<cr>v`]=`]
+    "au filetype html,jinja,htmldjango nnoremap <buffer> p :<c-u>yrpaste 'p'<cr>v`]=`]
+    "au filetype html,jinja,htmldjango nnoremap <buffer> π :<c-u>yrpaste 'p'<cr>
+    "au filetype html,jinja,htmldjango nnoremap <buffer> ∏ :<c-u>yrpaste 'p'<cr>
 
     " django tags
     au filetype jinja,htmldjango inoremap <buffer> <c-t> {%<space><space>%}<left><left><left>
