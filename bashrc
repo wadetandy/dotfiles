@@ -34,7 +34,8 @@ case "$TERM" in
 esac
 
 # Change shell mode to vi mode
-set -o vi
+# Turns out this is fairly annoying
+# set -o vi
 
 if [ -f `brew --prefix`/etc/bash-completion ]; then
  . `brew --prefix`/etc/bash-completion.d
@@ -92,6 +93,7 @@ alias lal='ls -Al'
 # git aliases
 alias st="git status"
 alias pr="git pull --rebase"
+alias add="git add -p"
 
 #development aliases
 alias be='bundle exec'
@@ -113,6 +115,9 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# get the fancy prompt contributions from rvm
+[[ -s "$HOME/.rvm/contrib/ps1_functions" ]] && source "$HOME/.rvm/contrib/ps1_functions"
 
 export PATH=$PATH:/sbin
 

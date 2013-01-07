@@ -321,6 +321,11 @@ augroup end
 " }}}
 " ruby {{{
 
+augroup ft_rabl
+    au!
+    au bufnewfile,bufread *.rabl setlocal filetype=ruby
+augroup end
+
 augroup ft_ruby
     au!
     au filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
