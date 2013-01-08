@@ -1,0 +1,37 @@
+" Auto commands
+" ------------------------------------------------------------
+
+augroup whitespace
+  " before writing to any file, this function call will remove any extra white space at the end of a line
+  autocmd BufWrite,FileWritePre * call RemoveWhiteSpace()
+augroup end
+
+augroup vimrc
+  autocmd FileWritePost vimrc* source %
+augroup end
+
+" Create directories on demand when saving files.
+" From http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
+augroup BWCCreateDir
+    au!
+    autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p ".shellescape(expand('%:h'), 1) | redraw! | endif
+augroup END
+
+" Omni Completion *************************************************************
+autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml        setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php        setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType c          setlocal omnifunc=ccomplete#Complete
+autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+
+" File Specific Settings
+autocmd bufnewfile,bufread *.rabl setlocal filetype=ruby
+autocmd filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType c,h,js         setlocal mps+==:;      " allow the match pairs operation (%) to work with '=' and ';'
+autocmd FileType c,h            setlocal cindent       " enable the intelligent cindent (cin) feature for the following files
+autocmd FileType js             setlocal smartindent   " enable the smartindenting (si) feature for the following files
+autocmd FileType txt            setlocal fo+=tn
+

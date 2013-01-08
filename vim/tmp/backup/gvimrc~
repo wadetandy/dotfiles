@@ -11,3 +11,12 @@ if has("gui_running")
 
   set guioptions=egmrt
 endif
+
+if has("gui_running")
+  if has("gui_macvim")
+    set guifont=Monaco:h13
+  endif
+
+  set guioptions=egmrt
+endif
+

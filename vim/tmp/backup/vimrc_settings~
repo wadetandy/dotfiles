@@ -1,0 +1,76 @@
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" Disable modeline security vulns
+set modelines=0
+
+" Tab Settings
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Wrapping
+"set nowrap
+"set textwidth=72
+"set colorcolumn=80
+"set formatoptions=qrn1
+"set sidescroll=5
+
+" wildmenu completion
+set wildmenu
+set wildmode=list:longest
+
+set wildignore+=.hg,.git,.svn                    " version control
+set wildignore+=*.aux,*.out,*.toc                " latex intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.sw?                            " vim swap files
+set wildignore+=*.ds_store                       " osx stuffs
+
+" backup and swap
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set backup
+
+" color scheme
+syntax enable
+colorscheme desert
+set background=dark
+
+" random settings
+set backspace=indent,eol,start
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+set encoding=utf-8
+set scrolloff=5
+set autoindent
+set showmode
+set hidden      " buffers with edits can exist without being 'open'
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set ttyfast
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set laststatus=2
+"set relativenumber
+set number
+
+" searching and movement ====================================================
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+
+" in many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif

@@ -1,0 +1,54 @@
+" remap leader key
+let mapleader = ","
+
+" hit jj to escape instead of moving your hand
+inoremap jj <esc>
+
+" searching and movement ====================================================
+
+" sane regex
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <leader><space> :noh<cr>
+
+nnoremap <tab> %
+vnoremap <tab> %
+
+" move by screen line instead of file line
+nnoremap j gj
+nnoremap k gk
+
+" shouldn't need to shift for colon
+nnoremap ; :
+
+" remap f1 to escape to stop hitting help by accident
+inoremap <f1> <esc>
+nnoremap <f1> <esc>
+vnoremap <f1> <esc>
+
+" Create a more sane way to switch window panes
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" easy ways to create and destroy panes
+nnoremap <leader>v <c-w>v<c-w>l
+nnoremap <leader>s <c-w>s<c-w>j
+nnoremap <leader>q :q<enter>
+
+" creating and moving between tabs
+nnoremap <leader>h :tabp<enter>
+nnoremap <leader>l :tabn<enter>
+nnoremap <leader>n :tabnew<enter>
+
+" Ack for word under cursor
+nnoremap <silent> <Leader>A yiw:Ack <C-r>"<cr>
+
+" don't use ex mode, use q for formatting
+map q gq
+
+" ctrl-u in insert mode deletes a lot.  use ctrl-g u to first break undo,
+" so that you can undo ctrl-u after inserting a line break.
+inoremap <c-u> <c-g>u<c-u>
+

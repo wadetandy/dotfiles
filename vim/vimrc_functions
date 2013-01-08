@@ -1,0 +1,21 @@
+" Removes the ^M character from the end of every line
+function! RemoveM()
+    :%s/^M$//g
+endfunction
+
+" Replaces the ^M character with a carraige return native to the system
+function! ReplaceM()
+    :%s/^M/\r/g
+endfunction
+
+" Removes superfluous white space from the end of a line
+function! RemoveWhiteSpace()
+    let save_cursor = getpos(".")
+    %s/\s*$//g
+    call setpos('.', save_cursor)
+endfunction
+
+function! IgnoreWhiteSpace()
+  set nolist
+  autocmd! whitespace
+endfunction
