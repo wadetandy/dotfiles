@@ -8,6 +8,7 @@ command! VimFunctions :e ~/.vim/vimrc_functions
 command! VimMaps      :e ~/.vim/vimrc_mappings
 command! VimPlugins   :e ~/.vim/vimrc_plugins
 command! VimSettings  :e ~/.vim/vimrc_settings
+command! VimAutocmds  :e ~/.vim/vimrc_autocmds
 command! VimBundles   :e ~/dotfiles/vim_bundles
 command! VimNT :NERDTree ~/.vim
 

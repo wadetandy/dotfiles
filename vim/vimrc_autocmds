@@ -6,10 +6,6 @@ augroup whitespace
   autocmd BufWrite,FileWritePre * call RemoveWhiteSpace()
 augroup end
 
-augroup vimrc
-  autocmd FileWritePost vimrc* source %
-augroup end
-
 " Create directories on demand when saving files.
 " From http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
 augroup BWCCreateDir
