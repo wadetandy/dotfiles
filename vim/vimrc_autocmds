@@ -13,6 +13,13 @@ augroup BWCCreateDir
     autocmd BufWritePre * if expand("<afile>")!~#'^\w\+:/' && !isdirectory(expand("%:h")) | execute "silent! !mkdir -p ".shellescape(expand('%:h'), 1) | redraw! | endif
 augroup END
 
+" make vim save and load the folding of the document each time it loads
+" also places the cursor in the last place that it was left.
+augroup ReturnToPlace
+    au BufWinLeave * mkview
+    au BufWinEnter * silent loadview
+augroup end
+
 " Omni Completion *************************************************************
 autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete

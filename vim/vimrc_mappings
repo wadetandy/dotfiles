@@ -1,6 +1,5 @@
 " remap leader key
 let mapleader = ","
-
 " hit jj to escape instead of moving your hand
 inoremap jj <esc>
 
@@ -39,7 +38,9 @@ nnoremap <leader>q :q<enter>
 
 " creating and moving between tabs
 nnoremap <leader>h :tabp<enter>
+nnoremap <leader>[ :tabp<enter>
 nnoremap <leader>l :tabn<enter>
+nnoremap <leader>] :tabn<enter>
 nnoremap <leader>n :tabnew<enter>
 
 " Ack for word under cursor
