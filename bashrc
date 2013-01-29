@@ -97,6 +97,8 @@ alias add="git add -p"
 
 #development aliases
 alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
 alias bspec='bundle exec rspec spec -c -f d'
 alias cucwip='rake cucumber:wip'
 
