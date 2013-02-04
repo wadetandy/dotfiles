@@ -12,6 +12,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+set clipboard=unnamed
 " Wrapping
 "set nowrap
 "set textwidth=72
@@ -30,6 +31,7 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " vim swap files
 set wildignore+=*.ds_store                       " osx stuffs
+set wildignore+=vendor/bundle,vendor/cache       " Gem bundle
 
 " backup and swap
 set undodir=~/.vim/tmp/undo//
@@ -59,7 +61,7 @@ set visualbell
 set ttyfast
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set laststatus=2
-"set relativenumber
+" set relativenumber
 set number
 
 " searching and movement ====================================================

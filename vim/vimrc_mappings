@@ -36,10 +36,19 @@ nnoremap <leader>v <c-w>v<c-w>l
 nnoremap <leader>s <c-w>s<c-w>j
 nnoremap <leader>q :q<enter>
 
+" Resize window panes easily
+nnoremap <silent> <leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+nnoremap <silent> <leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <leader>_ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
 " creating and moving between tabs
 nnoremap <leader>h :tabp<enter>
+nnoremap <leader>u :tabp<enter>
 nnoremap <leader>[ :tabp<enter>
 nnoremap <leader>l :tabn<enter>
+nnoremap <leader>d :tabn<enter>
 nnoremap <leader>] :tabn<enter>
 nnoremap <leader>n :tabnew<enter>
 

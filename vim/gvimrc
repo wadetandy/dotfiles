@@ -1,5 +1,9 @@
-" Command-T
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<D-T>
-  map <D-t> :CommandT<CR>
+if has("gui")
+    if has("gui_macvim")
+        set fuoptions=maxhorz,maxvert
+        " Command-T
+        " macmenu &File.New\ Tab key=<D-T>
+        " map <D-t> :CommandT<CR>
+    endif
+    set visualbell
 endif
