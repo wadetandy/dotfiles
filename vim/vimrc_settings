@@ -76,3 +76,7 @@ set hlsearch
 if has('mouse')
   set mouse=a
 endif
+
+if !empty($MY_RUBY_HOME)
+ let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
+endif

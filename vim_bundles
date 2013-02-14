@@ -13,7 +13,6 @@ bundle "ruby",     :git => "git://github.com/vim-ruby/vim-ruby.git"
 bundle "markdown",     :git => "https://github.com/tpope/vim-markdown.git"
 
 bundle "nerdtree",     :git => "https://github.com/scrooloose/nerdtree.git"
-bundle "css_color",     :git => "https://github.com/vim-scripts/css_color.vim.git"
 bundle "surround",     :git => "https://github.com/tpope/vim-surround"
 bundle "tabular",     :git => "https://github.com/godlygeek/tabular.git"
 bundle "abolish",     :git => "https://github.com/tpope/vim-abolish.git"
