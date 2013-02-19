@@ -70,3 +70,15 @@
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/bundle/vim-align"]
+	path = vim/bundle/vim-align
+	url = https://github.com/tsaleh/vim-align.git
+[submodule "vim/bundle/ctrl-p"]
+	path = vim/bundle/ctrl-p
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/textobj-word-column.vim"]
+	path = vim/bundle/textobj-word-column.vim
+	url = https://github.com/coderifous/textobj-word-column.vim.git
+[submodule "vim/bundle/gundo.vim"]
+	path = vim/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim.git

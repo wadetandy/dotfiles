@@ -20,6 +20,22 @@ nnoremap k gk
 " shouldn't need to shift for colon
 nnoremap ; :
 
+" Alignment Shortcuts
+vnoremap <Leader>a :Align
+vnoremap <Leader>ah :Align =><cr>
+vnoremap <Leader>ae :Align =<cr>
+
+function! s:align_columns() range
+  " execute a:firstline . ',' . a:lastline '!column -t'
+  '<,'>!column -t
+  '<,'>s/  \([^ ]\)/ \1/g
+  nohls
+  normal gv=
+  redraw " gets rid of: Press Enter to continue
+endfunction
+
+vnoremap <silent> <Leader>ac :call <SID>align_columns()<cr>
+
 " remap f1 to escape to stop hitting help by accident
 inoremap <f1> <esc>
 nnoremap <f1> <esc>

@@ -1,215 +1,242 @@
---- 
-vim-pathogen: 
+---
+vim-pathogen:
   :git: https://github.com/tpope/vim-pathogen.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-fugitive: 
+fugitive:
   :git: https://github.com/tpope/vim-fugitive
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-git: 
+git:
   :git: https://github.com/tpope/vim-git.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-haml: 
+haml:
   :git: https://github.com/tpope/vim-haml.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-rails: 
+rails:
   :git: https://github.com/tpope/vim-rails.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-coffee-script: 
+coffee-script:
   :git: https://github.com/kchmck/vim-coffee-script.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-ruby: 
+ruby:
   :git: git://github.com/vim-ruby/vim-ruby.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-markdown: 
+markdown:
   :git: https://github.com/tpope/vim-markdown.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-nerdtree: 
+nerdtree:
   :git: https://github.com/scrooloose/nerdtree.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-surround: 
+surround:
   :git: https://github.com/tpope/vim-surround
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-tabular: 
+tabular:
   :git: https://github.com/godlygeek/tabular.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-abolish: 
+abolish:
   :git: https://github.com/tpope/vim-abolish.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-command-t: 
-  :git: https://github.com/wincent/Command-T.git
-  :type: :git
-  :opts: 
-    :vimrc_file: vimrc
-    :vim_bin_path: /usr/bin/vim
-    :bundles_dir: vim/bundle
-    :use_git_submodules: true
-    :git_bin: git
-color-sampler-pack: 
+color-sampler-pack:
   :git: https://github.com/vim-scripts/Color-Sampler-Pack.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-color-irblack: 
+color-irblack:
   :git: https://github.com/wgibbs/vim-irblack.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-ack: 
+ack:
   :git: https://github.com/mileszs/ack.vim.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-supertab: 
+supertab:
   :git: https://github.com/ervandew/supertab.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-syntastic: 
+syntastic:
   :git: https://github.com/scrooloose/syntastic.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-endwise: 
+endwise:
   :git: git://github.com/tpope/vim-endwise.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-t-comment: 
+t-comment:
   :git: https://github.com/vim-scripts/tComment.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-textobj-user: 
+textobj-user:
   :git: https://github.com/kana/vim-textobj-user.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-textobj-rubyblock: 
+textobj-rubyblock:
   :git: https://github.com/nelstrom/vim-textobj-rubyblock.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-vim-easymotion: 
+vim-easymotion:
   :git: https://github.com/Lokaltog/vim-easymotion.git
   :type: :git
-  :opts: 
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
-vim-powerline: 
+vim-powerline:
   :git: https://github.com/Lokaltog/vim-powerline.git
   :type: :git
-  :opts: 
+  :opts:
+    :vimrc_file: vimrc
+    :vim_bin_path: /usr/bin/vim
+    :bundles_dir: vim/bundle
+    :use_git_submodules: true
+    :git_bin: git
+vim-align:
+  :git: https://github.com/tsaleh/vim-align.git
+  :type: :git
+  :opts:
+    :vimrc_file: vimrc
+    :vim_bin_path: /usr/bin/vim
+    :bundles_dir: vim/bundle
+    :use_git_submodules: true
+    :git_bin: git
+ctrl-p:
+  :git: https://github.com/kien/ctrlp.vim.git
+  :type: :git
+  :opts:
+    :vimrc_file: vimrc
+    :vim_bin_path: /usr/bin/vim
+    :bundles_dir: vim/bundle
+    :use_git_submodules: true
+    :git_bin: git
+textobj-word-column.vim:
+  :git: https://github.com/coderifous/textobj-word-column.vim.git
+  :type: :git
+  :opts:
+    :vimrc_file: vimrc
+    :vim_bin_path: /usr/bin/vim
+    :bundles_dir: vim/bundle
+    :use_git_submodules: true
+    :git_bin: git
+gundo.vim:
+  :git: https://github.com/sjl/gundo.vim.git
+  :type: :git
+  :opts:
     :vimrc_file: vimrc
     :vim_bin_path: /usr/bin/vim
     :bundles_dir: vim/bundle

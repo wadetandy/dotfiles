@@ -24,6 +24,7 @@ let g:tcommentMapLeader1   = ""
 let g:tcommentMapLeader2   = ""
 let g:tcommentMapLeaderOp1 = ""
 let g:tcommentMapLeaderOp2 = ""
+
 " Create the only ones that matters
 noremap <silent> <Leader>c :TComment<cr>
 
@@ -52,5 +53,5 @@ hi link EasyMotionShade  Comment
 " Not config for the plugin, just coloring for it.
 hi! link SignColumn LineNr
 
-" Command-T
-let g:CommandTCancelMap  ="<Esc>"
+" Ctrl-P
+let g:ctrlp_map  ="<leader>t"
