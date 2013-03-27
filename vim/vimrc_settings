@@ -28,10 +28,12 @@ set wildignore+=.hg,.git,.svn                    " version control
 set wildignore+=*.aux,*.out,*.toc                " latex intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.scssc                          " Compiled scss files
 set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " vim swap files
 set wildignore+=*.ds_store                       " osx stuffs
-set wildignore+=vendor/bundle,vendor/cache       " Gem bundle
+set wildignore+=vendor/bundle/*,vendor/cache/*   " Gem bundle
+set wildignore+=tmp/*                            " tmp files
 
 " backup and swap
 set undodir=~/.vim/tmp/undo//
