@@ -31,22 +31,22 @@ let g:tcommentMapLeaderOp2 = ""
 noremap <silent> <Leader>c :TComment<cr>
 
 " EasyMotion
-let g:EasyMotion_do_mapping = 0
+" let g:EasyMotion_do_mapping = 0
 
-nnoremap <Leader>f :call EasyMotion#F(0,0)<cr>
-nnoremap <Leader>F :call EasyMotion#F(0,1)<cr>
-nnoremap <Leader>j :call EasyMotion#JK(0,0)<cr>
-nnoremap <Leader>k :call EasyMotion#JK(0,1)<cr>
-
-onoremap <Leader>f :call EasyMotion#F(0,0)<cr>
-onoremap <Leader>F :call EasyMotion#F(0,1)<cr>
-onoremap <Leader>j :call EasyMotion#JK(0,0)<cr>
-onoremap <Leader>k :call EasyMotion#JK(0,1)<cr>
-
-vnoremap <Leader>f :<C-u>call EasyMotion#F(1,0)<cr>
-vnoremap <Leader>F :<C-u>call EasyMotion#F(1,1)<cr>
-vnoremap <Leader>j :<C-u>call EasyMotion#JK(1,0)<cr>
-vnoremap <Leader>k :<C-u>call EasyMotion#JK(1,1)<cr>
+" nnoremap <Leader>f :call EasyMotion#F(0,0)<cr>
+" nnoremap <Leader>F :call EasyMotion#F(0,1)<cr>
+" nnoremap <Leader>j :call EasyMotion#JK(0,0)<cr>
+" nnoremap <Leader>k :call EasyMotion#JK(0,1)<cr>
+"
+" onoremap <Leader>f :call EasyMotion#F(0,0)<cr>
+" onoremap <Leader>F :call EasyMotion#F(0,1)<cr>
+" onoremap <Leader>j :call EasyMotion#JK(0,0)<cr>
+" onoremap <Leader>k :call EasyMotion#JK(0,1)<cr>
+"
+" vnoremap <Leader>f :<C-u>call EasyMotion#F(1,0)<cr>
+" vnoremap <Leader>F :<C-u>call EasyMotion#F(1,1)<cr>
+" vnoremap <Leader>j :<C-u>call EasyMotion#JK(1,0)<cr>
+" vnoremap <Leader>k :<C-u>call EasyMotion#JK(1,1)<cr>
 
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
