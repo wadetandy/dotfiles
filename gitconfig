@@ -1,13 +1,16 @@
 [user]
 	name = Wade Tandy
 	email = wade@wadetandy.com
+
 [color]
 	grep = auto
 	branch = auto
 	diff = auto
 	status = auto
+
 [diff]
 	renames = true
+
 [alias]
 	st = status
 	d = diff
@@ -16,5 +19,9 @@
 	pr = pull --rebase
 	ls = log --graph --color --pretty=\"format:%C(yellow)%h%Creset%C(green)%d%Creset %s %Cblue[%aN]%Creset %C(magenta){%cr}%Creset\"
 	la = log --graph --color --pretty=\"format:%C(yellow)%h%Creset%C(green)%d%Creset %s %Cblue[%aN]%Creset %C(magenta){%cr}%Creset\" --all
+
 [grep]
 	lineNumber = true
+
+[url "https://github.com/"]
+	insteadOf = git://github.com/
