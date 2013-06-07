@@ -4,7 +4,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Pathogen set up
 filetype off
 call pathogen#infect()
-call pathogen#infect("unpublished")
+call pathogen#infect('unpublished/{}')
 call pathogen#helptags()
 filetype plugin indent on
 
