@@ -242,3 +242,12 @@ gundo.vim:
     :bundles_dir: vim/bundle
     :use_git_submodules: true
     :git_bin: git
+rename.vim:
+  :git: https://github.com/danro/rename.vim
+  :type: :git
+  :opts:
+    :vimrc_file: vimrc
+    :vim_bin_path: /usr/bin/vim
+    :bundles_dir: vim/bundle
+    :use_git_submodules: true
+    :git_bin: git
