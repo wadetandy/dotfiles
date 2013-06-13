@@ -68,3 +68,8 @@ let g:ctrlp_user_command = {
             \   },
             \   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
             \ }
+
+
+" Supertab settings
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabLongestHighlight = 1
