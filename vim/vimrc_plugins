@@ -73,3 +73,9 @@ let g:ctrlp_user_command = {
 " Supertab settings
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabLongestHighlight = 1
+
+
+" Syntastic settings
+
+let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/syntastic_configs/coffeelint""
+" let g:syntastic_coffee_coffeelint_tail="

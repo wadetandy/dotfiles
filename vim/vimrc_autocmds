@@ -31,7 +31,8 @@ autocmd FileType c          setlocal omnifunc=ccomplete#Complete
 autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 
 " File Specific Settings
-autocmd bufnewfile,bufread *.rabl setlocal filetype=ruby
+autocmd bufnewfile,bufread *.rabl       setlocal filetype=ruby
+autocmd bufnewfile,bufread *.coffee.erb setlocal filetype=coffee
 
 autocmd filetype ruby           setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd filetype coffee         setlocal shiftwidth=2 tabstop=2 softtabstop=2
