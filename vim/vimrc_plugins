@@ -79,3 +79,6 @@ let g:SuperTabLongestHighlight = 1
 
 let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/syntastic_configs/coffeelint""
 " let g:syntastic_coffee_coffeelint_tail="
+let g:syntastic_html_tidy_ignore_errors = [
+    \ "proprietary attribute",
+\ ]
