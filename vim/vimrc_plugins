@@ -55,6 +55,10 @@ hi link EasyMotionShade  Comment
 " Not config for the plugin, just coloring for it.
 hi! link SignColumn LineNr
 
+" Gundo
+nnoremap <leader>g :GundoToggle<CR>
+let g:gundo_preview_bottom = 1
+
 " Ctrl-P
 let g:ctrlp_map  ="<leader>t"
 "
