@@ -102,6 +102,8 @@ alias bu='bundle update'
 alias bspec='bundle exec rspec spec -c -f d'
 alias cucwip='rake cucumber:wip'
 
+alias bsh='ssh -p 22222 wtandy@bshell.bloomberg.com'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
