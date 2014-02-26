@@ -36,6 +36,15 @@ endfunction
 
 vnoremap <silent> <Leader>ac :call <SID>align_columns()<cr>
 
+function! s:sort_rows() range
+  '<,'>!sort
+  nohls
+  normal gv=
+  redraw " gets rid of: Press Enter to continue
+endfunction
+
+vnoremap <silent> <Leader>sr :call <SID>sort_rows()<cr>
+
 " remap f1 to escape to stop hitting help by accident
 inoremap <f1> <esc>
 nnoremap <f1> <esc>
