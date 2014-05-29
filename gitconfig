@@ -1,6 +1,6 @@
 [user]
 	name = Wade Tandy
-	email = wade@wadetandy.com
+	email = wtandy@bloomberg.net
 
 [color]
 	grep = auto
@@ -25,3 +25,16 @@
 
 [url "https://github.com/"]
 	insteadOf = git://github.com/
+
+[url "ssh://git@github.dev.bloomberg.com/"]
+	insteadOf = git://github.dev.bloomberg.com
+
+[http]
+	sslVerify = false
+
+[credential]
+	helper = osxkeychain
+
+[hub]
+	host = github.dev.bloomberg.com
+	protocol = https
