@@ -33,6 +33,7 @@ set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " vim swap files
 set wildignore+=*.ds_store                       " osx stuffs
 set wildignore+=vendor/bundle/*,vendor/cache/*   " Gem bundle
+set wildignore+=node_modules/*                   " Node modules
 set wildignore+=tmp/*                            " tmp files
 
 " backup and swap
