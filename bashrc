@@ -120,10 +120,18 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# get the fancy prompt contributions from rvm
-[[ -s "$HOME/.rvm/contrib/ps1_functions" ]] && source "$HOME/.rvm/contrib/ps1_functions"
+# Add chruby support, if available
+chruby_file=/usr/local/opt/chruby/share/chruby/chruby.sh
+[[ -s $chruby_file ]] && source $chruby_file
 
-export PATH=$PATH:/sbin
+chruby_autoload=/usr/local/opt/chruby/share/chruby/auto.sh
+[[ -s $chruby_autoload ]] && source $chruby_autoload
+
+export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/sbin
+
+# Init NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # if macVim exists, replace vim commands with appropriate macVim counterparts
 #MVIMCMDS="vim vimdiff vimex"
@@ -132,7 +140,10 @@ export PATH=$PATH:/sbin
     #command -v m$cmd >/dev/null && { alias $cmd="m$cmd"; }
 #done
 export EDITOR=vim
+export PAGER=less
 
 RACK_ENV=development
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# get the fancy prompt contributions from rvm
+# [[ -s "$HOME/.rvm/contrib/ps1_functions" ]] && source "$HOME/.rvm/contrib/ps1_functions"
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
