@@ -85,3 +85,12 @@
 [submodule "vim/bundle/rename.vim"]
 	path = vim/bundle/rename.vim
 	url = https://github.com/danro/rename.vim
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade
+[submodule "vim/bundle/vim-mustache-handlebars"]
+	path = vim/bundle/vim-mustache-handlebars
+	url = git://github.com/mustache/vim-mustache-handlebars.git
