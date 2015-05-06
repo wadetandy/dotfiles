@@ -89,7 +89,7 @@ let g:syntastic_scss_sass_args="--load-path ./bower_components"
 
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
 
-let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/syntastic_configs/coffeelint""
+let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/syntastic_configs/coffeelint"
 " let g:syntastic_coffee_coffeelint_tail="
 let g:syntastic_html_tidy_ignore_errors = [
     \ "proprietary attribute",

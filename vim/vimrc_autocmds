@@ -33,11 +33,13 @@ autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
 " File Specific Settings
 autocmd bufnewfile,bufread *.rabl       setlocal filetype=ruby
 autocmd bufnewfile,bufread *.coffee.erb setlocal filetype=coffee
+autocmd BufRead,BufNewFile *.es6        setlocal filetype=javascript
 
 autocmd filetype ruby           setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd filetype coffee         setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c,h,js         setlocal mps+==:;      " allow the match pairs operation (%) to work with '=' and ';'
 autocmd FileType c,h            setlocal cindent       " enable the intelligent cindent (cin) feature for the following files
+autocmd filetype js             setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType js             setlocal smartindent   " enable the smartindenting (si) feature for the following files
 autocmd FileType txt            setlocal fo+=tn
 
