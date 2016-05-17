@@ -55,6 +55,9 @@ hi link EasyMotionShade  Comment
 " Not config for the plugin, just coloring for it.
 hi! link SignColumn LineNr
 
+" JSX
+let g:jsx_ext_required = 0
+
 " Gundo
 nnoremap <leader>g :GundoToggle<CR>
 let g:gundo_preview_bottom = 1
@@ -94,6 +97,9 @@ let g:syntastic_coffee_coffeelint_args="--csv -f ~/.vim/syntastic_configs/coffee
 let g:syntastic_html_tidy_ignore_errors = [
     \ "proprietary attribute",
 \ ]
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 
 " Markdown block highlighting
 let g:markdown_fenced_languages = ['ruby', 'coffeescript=coffee', 'coffee', 'html', 'haml', 'javascript']

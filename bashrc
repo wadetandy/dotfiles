@@ -37,10 +37,6 @@ esac
 # Turns out this is fairly annoying
 # set -o vi
 
-if [ -f `brew --prefix`/etc/bash-completion ]; then
- . `brew --prefix`/etc/bash-completion.d
-fi
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -104,6 +100,9 @@ alias cucwip='rake cucumber:wip'
 
 alias bsh='ssh -p 22222 wtandy@bshell.bloomberg.com'
 
+export PATH=/sbin:~/homebrew/bin:$PATH
+export HOMEBREW_CASK_OPTS="--appdir=~/homebrew/bin  --caskroom=~/homebrew/Caskroom"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -120,16 +119,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Add chruby support, if available
-chruby_file=/usr/local/opt/chruby/share/chruby/chruby.sh
-[[ -s $chruby_file ]] && source $chruby_file
+if [ -f `brew --prefix`/etc/bash-completion ]; then
+ . `brew --prefix`/etc/bash-completion.d
+fi
 
-chruby_autoload=/usr/local/opt/chruby/share/chruby/auto.sh
-[[ -s $chruby_autoload ]] && source $chruby_autoload
+source ~/.profile
 
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH:/sbin
-
-# Init NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
@@ -145,5 +140,7 @@ export PAGER=less
 RACK_ENV=development
 
 # get the fancy prompt contributions from rvm
-# [[ -s "$HOME/.rvm/contrib/ps1_functions" ]] && source "$HOME/.rvm/contrib/ps1_functions"
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/contrib/ps1_functions" ]] && source "$HOME/.rvm/contrib/ps1_functions"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/terraform
