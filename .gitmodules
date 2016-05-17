@@ -9,7 +9,7 @@
 	url = https://github.com/tpope/vim-git.git
 [submodule "vim/bundle/haml"]
 	path = vim/bundle/haml
-	url = https://github.com/tpope/vim-haml.git
+	url = https://github.com/tpope/vim-haml
 [submodule "vim/bundle/rails"]
 	path = vim/bundle/rails
 	url = https://github.com/tpope/vim-rails.git
@@ -51,7 +51,7 @@
 	url = https://github.com/ervandew/supertab.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic
 [submodule "vim/bundle/endwise"]
 	path = vim/bundle/endwise
 	url = https://github.com/tpope/vim-endwise.git
@@ -75,7 +75,7 @@
 	url = https://github.com/tsaleh/vim-align.git
 [submodule "vim/bundle/ctrl-p"]
 	path = vim/bundle/ctrl-p
-	url = https://github.com/kien/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "vim/bundle/textobj-word-column.vim"]
 	path = vim/bundle/textobj-word-column.vim
 	url = https://github.com/coderifous/textobj-word-column.vim.git
@@ -93,7 +93,7 @@
 	url = https://github.com/digitaltoad/vim-jade
 [submodule "vim/bundle/vim-mustache-handlebars"]
 	path = vim/bundle/vim-mustache-handlebars
-	url = git://github.com/mustache/vim-mustache-handlebars.git
+	url = https://github.com/mustache/vim-mustache-handlebars.git
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx
