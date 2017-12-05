@@ -60,6 +60,7 @@ nnoremap <c-l> <c-w>l
 nnoremap <leader>v <c-w>v<c-w>l
 nnoremap <leader>s <c-w>s<c-w>j
 nnoremap <leader>q :q<enter>
+nnoremap <leader>w :w<enter>
 
 " Resize window panes easily
 nnoremap <silent> <leader>= :exe "resize " . (winheight(0) * 3/2)<CR>

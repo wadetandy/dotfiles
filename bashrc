@@ -88,19 +88,28 @@ alias lal='ls -Al'
 
 # git aliases
 alias st="git status"
-alias pr="git pull --rebase"
 alias add="git add -p"
 
 #development aliases
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
-alias bspec='bundle exec rspec spec -c -f d'
-alias cucwip='rake cucumber:wip'
 
-alias bsh='ssh -p 22222 wtandy@bshell.bloomberg.com'
+# Docker compose development aliases
 
-export PATH=/sbin:~/homebrew/bin:$PATH
+export COMPOSE_OVERRIDE=docker-compose.override.yml
+
+alias dc='docker-compose -f docker-compose.yml -f $COMPOSE_OVERRIDE '
+alias dcr='dc run --rm '
+alias dc_console='dcr app bin/rails console'
+alias dc_rspec='dcr app bin/rspec'
+alias dc_bi='dcr app bundle install'
+alias dc_migrate='dcr app bin/rails db:migrate'
+alias dc_migrate_test='dcr -e RAILS_ENV=test app bin/rails db:migrate'
+alias dc_rollback='dcr app bin/rails db:rollback'
+alias dc_rollback_test='dcr -e RAILS_ENV=test app bin/rails db:rollback'
+alias dc_attach='dc up -d && docker attach'
+
 export HOMEBREW_CASK_OPTS="--appdir=~/homebrew/bin  --caskroom=~/homebrew/Caskroom"
 
 # Alias definitions.
@@ -119,28 +128,55 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f `brew --prefix`/etc/bash-completion ]; then
- . `brew --prefix`/etc/bash-completion.d
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+ . `brew --prefix`/etc/bash_completion
 fi
 
 source ~/.profile
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-# if macVim exists, replace vim commands with appropriate macVim counterparts
-#MVIMCMDS="vim vimdiff vimex"
-#for cmd in $MVIMCMDS
-#do
-    #command -v m$cmd >/dev/null && { alias $cmd="m$cmd"; }
-#done
 export EDITOR=vim
 export PAGER=less
 
-RACK_ENV=development
-
 # get the fancy prompt contributions from rvm
-[[ -s "$HOME/.rvm/contrib/ps1_functions" ]] && source "$HOME/.rvm/contrib/ps1_functions"
+if [[ -s "$HOME/dotfiles/bash_prompt" ]]; then
+    source "$HOME/dotfiles/bash_prompt"
+    source "$HOME/dotfiles/git-prompt.sh"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/terraform
+    ps1_set --norvm
+fi
+
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
+
+if [[ -s "$HOME/bin" ]]; then
+    PATH=$PATH:$HOME/bin
+fi
+
+export GOPATH=$HOME/projects/go
+
+if [[ -s "$GOPATH/bin" ]]; then
+    PATH=$PATH:$GOPATH/bin
+fi
+
+function export_ip() {
+  export HOST_IP=$(get_ip)
+}
+
+# BGOV Bootstrap Vars
+export RUBYGEMS_HOST=https://artprod.dev.bloomberg.com/artifactory/api/gems/bb-ruby-repos
+export BBGITHUB_HOST='bbgithub.dev.bloomberg.com'
+export GITLAB_USER_ID='wtandy'
+export GITLAB_USER_EMAIL='wtandy@bloomberg.net'
+export GITLAB_CI='false'
+
+export AWS_CA_BUNDLE=~/.certs.cer
+
+# added by travis gem
+[ -f /Users/wtandy/.travis/travis.sh ] && source /Users/wtandy/.travis/travis.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

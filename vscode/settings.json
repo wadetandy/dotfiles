@@ -1,0 +1,154 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.fontSize": 12,
+
+    "workbench.fontAliasing": "antialiased",
+
+    // Vim Bindings,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.ignorecase": true,
+    "vim.smartcase": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "c"],
+            "after": ["g", "c", "c"]
+        },
+        {
+            "before": ["<leader>","<space>"],
+            "after":[],
+            "commands": [
+                {
+                     "command": ":nohl"
+                }
+            ]
+        },
+        {
+            "before": ["j"],
+            "after": ["g","j"]
+        },
+        {
+            "before": ["<leader>", "t"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":quit",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<leader>", "w"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":write",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":vsplit",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["<leader>", "v"],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":split",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["k"],
+            "after": ["g","k"]
+        },
+        {
+            "before": ["<leader>","<tab>"],
+            "after":[],
+            "commands": [
+                {
+                     "command": "workbench.view.explorer"
+                }
+            ]
+        },
+        {
+            "before": ["<leader>","h"],
+            "after":[],
+            "commands": [
+                {
+                     "command": ":tabp"
+                }
+            ]
+        },
+        {
+            "before": ["<leader>","l"],
+            "after":[],
+            "commands": [
+                {
+                     "command": ":tabn"
+                }
+            ]
+        },
+        {
+            "before": ["<leader>","n"],
+            "after":[],
+            "commands": [
+                {
+                     "command": ":tabnew"
+                }
+            ]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.handleKeys":{
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "search.exclude": {
+        "**/tmp": true,
+        "**/vendor/bundle": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/dist": true
+    },
+    "search.useIgnoreFilesByDefault": true,
+    "extensions.autoUpdate": true,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.disableAnnoyingGcMessage": true,
+    "tslint.enable": true,
+    "tslint.autoFixOnSave": true,
+    "window.zoomLevel": 0,
+    "typescript.check.tscVersion": false,
+    "explorer.confirmDragAndDrop": false,
+    "typescript.tsserver.log": "verbose"
+}

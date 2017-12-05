@@ -76,6 +76,9 @@ set showmatch  " Highlight matching paretheses, brackets, braces, etc.
 set hlsearch
 set incsearch  " do incremental searching
 
+" disable visual and audio bell
+set t_vb=
+
 " in many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
