@@ -1,11 +1,11 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "files.trimTrailingWhitespace": true,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
     "editor.fontSize": 12,
-
+    "git.ignoreLimitWarning": true,
     "workbench.fontAliasing": "antialiased",
-
     // Vim Bindings,
     "vim.easymotion": true,
     "vim.incsearch": true,
@@ -16,30 +16,53 @@
     "vim.smartcase": true,
     "vim.insertModeKeyBindings": [
         {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
         }
     ],
     "vim.otherModesKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>", "c"],
-            "after": ["g", "c", "c"]
+            "before": [
+                "<leader>",
+                "c"
+            ],
+            "after": [
+                "g",
+                "c",
+                "c"
+            ]
         },
         {
-            "before": ["<leader>","<space>"],
-            "after":[],
+            "before": [
+                "<leader>",
+                "<space>"
+            ],
+            "after": [],
             "commands": [
                 {
-                     "command": ":nohl"
+                    "command": ":nohl"
                 }
             ]
         },
         {
-            "before": ["j"],
-            "after": ["g","j"]
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ]
         },
         {
-            "before": ["<leader>", "t"],
+            "before": [
+                "<leader>",
+                "t"
+            ],
             "after": [],
             "commands": [
                 {
@@ -49,7 +72,10 @@
             ]
         },
         {
-            "before": ["<leader>", "q"],
+            "before": [
+                "<leader>",
+                "q"
+            ],
             "after": [],
             "commands": [
                 {
@@ -59,7 +85,10 @@
             ]
         },
         {
-            "before": ["<leader>", "w"],
+            "before": [
+                "<leader>",
+                "w"
+            ],
             "after": [],
             "commands": [
                 {
@@ -69,7 +98,10 @@
             ]
         },
         {
-            "before": ["<leader>", "s"],
+            "before": [
+                "<leader>",
+                "s"
+            ],
             "after": [],
             "commands": [
                 {
@@ -79,7 +111,10 @@
             ]
         },
         {
-            "before": ["<leader>", "v"],
+            "before": [
+                "<leader>",
+                "v"
+            ],
             "after": [],
             "commands": [
                 {
@@ -89,48 +124,65 @@
             ]
         },
         {
-            "before": ["k"],
-            "after": ["g","k"]
+            "before": [
+                "k"
+            ],
+            "after": [
+                "g",
+                "k"
+            ]
         },
         {
-            "before": ["<leader>","<tab>"],
-            "after":[],
+            "before": [
+                "<leader>",
+                "<tab>"
+            ],
+            "after": [],
             "commands": [
                 {
-                     "command": "workbench.view.explorer"
+                    "command": "workbench.view.explorer"
                 }
             ]
         },
         {
-            "before": ["<leader>","h"],
-            "after":[],
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "after": [],
             "commands": [
                 {
-                     "command": ":tabp"
+                    "command": ":tabp"
                 }
             ]
         },
         {
-            "before": ["<leader>","l"],
-            "after":[],
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "after": [],
             "commands": [
                 {
-                     "command": ":tabn"
+                    "command": ":tabn"
                 }
             ]
         },
         {
-            "before": ["<leader>","n"],
-            "after":[],
+            "before": [
+                "<leader>",
+                "n"
+            ],
+            "after": [],
             "commands": [
                 {
-                     "command": ":tabnew"
+                    "command": ":tabnew"
                 }
             ]
         }
     ],
     "vim.leader": ",",
-    "vim.handleKeys":{
+    "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
     },
@@ -147,8 +199,52 @@
     "vim.disableAnnoyingGcMessage": true,
     "tslint.enable": true,
     "tslint.autoFixOnSave": true,
+    "eslint.options": {
+        "extensions": [".html", ".js", ".vue", ".jsx"]
+    },
+    "eslint.validate": [
+        {
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        }
+    ],
     "window.zoomLevel": 0,
-    "typescript.check.tscVersion": false,
     "explorer.confirmDragAndDrop": false,
-    "typescript.tsserver.log": "verbose"
+    "typescript.tsserver.log": "verbose",
+    "workbench.panel.location": "bottom",
+    "explorer.confirmDelete": false,
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        [
+            "White",
+            "Gold",
+            "Orchid",
+            "LightSkyBlue",
+        ],
+        "Red"
+    ],
+    "ruby.intellisense": "solargraph",
+    "ruby.lint": {
+        "rubocop": {
+            "except": [
+                "convention:Style/Documentation"
+            ],
+            "lint": true,
+            "rails": true
+        }
+    }
 }

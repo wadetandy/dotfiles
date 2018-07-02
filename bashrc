@@ -132,7 +132,13 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
  . `brew --prefix`/etc/bash_completion
 fi
 
-source ~/.profile
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
+
+if [ -f ~/.node_extra_certs.pem ]; then
+    export NODE_EXTRA_CA_CERTS=~/.node_extra_certs.pem
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
@@ -175,7 +181,7 @@ export GITLAB_USER_ID='wtandy'
 export GITLAB_USER_EMAIL='wtandy@bloomberg.net'
 export GITLAB_CI='false'
 
-export AWS_CA_BUNDLE=~/.certs.cer
+export AWS_CA_BUNDLE=~/.certs.pem
 
 # added by travis gem
 [ -f /Users/wtandy/.travis/travis.sh ] && source /Users/wtandy/.travis/travis.sh
