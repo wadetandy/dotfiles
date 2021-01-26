@@ -1,6 +1,6 @@
 [user]
 	name = Wade Tandy
-	email = wtandy@bloomberg.net
+	email = wade.tandy@gmail.com
 
 [color]
 	grep = auto
@@ -26,7 +26,5 @@
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 
-[http]
-    proxy = http://127.0.0.1:8888
 [url "https://"]
 	insteadOf = git://

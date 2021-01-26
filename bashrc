@@ -95,23 +95,6 @@ alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
 
-# Docker compose development aliases
-
-export COMPOSE_OVERRIDE=docker-compose.override.yml
-
-alias dc='docker-compose -f docker-compose.yml -f $COMPOSE_OVERRIDE '
-alias dcr='dc run --rm '
-alias dc_console='dcr app bin/rails console'
-alias dc_rspec='dcr app bin/rspec'
-alias dc_bi='dcr app bundle install'
-alias dc_migrate='dcr app bin/rails db:migrate'
-alias dc_migrate_test='dcr -e RAILS_ENV=test app bin/rails db:migrate'
-alias dc_rollback='dcr app bin/rails db:rollback'
-alias dc_rollback_test='dcr -e RAILS_ENV=test app bin/rails db:rollback'
-alias dc_attach='dc up -d && docker attach'
-
-export HOMEBREW_CASK_OPTS="--appdir=~/homebrew/bin  --caskroom=~/homebrew/Caskroom"
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -143,7 +126,9 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-export EDITOR=vim
+export VISUAL=code
+export EDITOR=$EDITOR
+export GIT_EDITOR=vim
 export PAGER=less
 
 # get the fancy prompt contributions from rvm
@@ -154,11 +139,6 @@ if [[ -s "$HOME/dotfiles/bash_prompt" ]]; then
     ps1_set --norvm
 fi
 
-
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-    source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
 
 if [[ -s "$HOME/bin" ]]; then
     PATH=$PATH:$HOME/bin
@@ -174,15 +154,7 @@ function export_ip() {
   export HOST_IP=$(get_ip)
 }
 
-# BGOV Bootstrap Vars
-export RUBYGEMS_HOST=https://artprod.dev.bloomberg.com/artifactory/api/gems/bb-ruby-repos
-export BBGITHUB_HOST='bbgithub.dev.bloomberg.com'
-export GITLAB_USER_ID='wtandy'
-export GITLAB_USER_EMAIL='wtandy@bloomberg.net'
-export GITLAB_CI='false'
-
 export AWS_CA_BUNDLE=~/.certs.pem
 
 # added by travis gem
 [ -f /Users/wtandy/.travis/travis.sh ] && source /Users/wtandy/.travis/travis.sh
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
